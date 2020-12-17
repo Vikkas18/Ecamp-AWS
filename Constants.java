@@ -75,26 +75,6 @@ public class Constants {
 	public static final String LOADDISTRIBUTION_RETRY_SUBSTATUS ="TechError";
 	public static final String LOADDISTRIBUTION_RETRY_STATUS ="Retry";
 	public static final String LOADDISTRIBUTION_REMARK ="loadbalancer";
-
-	// predefined Strings
-	public static final int SUCCESS_CODE=200;
-	public static final String INPUT_DATA_ERROR_CODE="401";
-	public static final int EXCEPTION_CODE=500;
-	public static final String SUCCESS_MESSAGE="SUCCESS";
-	public static final String FAILURE_MESSAGE="FAILURE";
-	public static final String APIGEE_SERVICE_FAILURE="APIGEE SERVICE FAILURE";
-	public static final String VALIDATION_FAILURE ="403";
-	public static final String POLICY_NUMBER = "POLICY_NUMBER";
-	public static final String CLIENT_ID = "CLIENT_ID";
-	public static final String RESPONSE_TYPE = "response";
-	public static final String MESSAGE="message";
-	public static final String MESSAGES="messages";
-	public static final String ACTION="action";
-	public static final String ERROR="error";
-	public static final String TYPE="type";
-	public static final String ERR_CODE="ErrCode";
-	public static final String ERR_MSG="ErrMsg";
-	public static final String INTENTS_KEY = "intents";
 	
 	public static String getDate(String pattern) {
 		DateFormat dateFormat = new SimpleDateFormat(pattern);
