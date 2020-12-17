@@ -39,10 +39,44 @@ public class Constants {
 	public static final int ENQUEUE_FAILD = 112;
 	public static final int EVALUATED = 101;
 	public static final int ENQUEUEING = 101;
+		
+	//Netcore Pepipost events
+	public static final String NETCORE_PEPIPOST_STATUS_SENT = "sent";
+	public static final String NETCORE_PEPIPOST_STATUS_OPENED = "opened";
+	public static final String NETCORE_PEPIPOST_STATUS_CLICKED = "clicked";
+	public static final String NETCORE_PEPIPOST_STATUS_BOUNCED = "bounced";
+	public static final String NETCORE_PEPIPOST_STATUS_DROPPED = "dropped";
+	public static final String NETCORE_PEPIPOST_STATUS_INVALID = "invalid";
+	public static final String NETCORE_PEPIPOST_STATUS_UNSUBSCRIBED = "unsubscribed";
+	public static final String NETCORE_PEPIPOST_STATUS_SPAM = "spam";
+		
+	//Vendors
+	public static final String IBANK_SMTP = "ibanksmtp";
+	public static final String NETCORE_PEPIPOST = "netcore_pepipost";
 	
+	//Entities
+	public static final String CAMPAIGN_RECORD_ENTITY = "campaignrecord";
+	public static final String CAMPAIGN_DEFINITION_ENTITY = "campaigndefinition";
+	public static final String CAMPAIGN_TEMPLATE_ENTITY = "campaigntemplate";
 	
+	//Services
+	public static final String EMAIL_SERVICE = "emailservice";
+
+	//LoadDistibutionService Statuses
+	public static final String SUCCESS_CODE="200";
+	public static final String INPUT_DATA_ERROR_CODE="401";
+	public static final String EXCEPTION_CODE="500";
+	public static final String LOADDISTRIBUTION_SUCCESS_STATUS ="Processing";
+	public static final String LOADDISTRIBUTION_SUCCESS_SUBSTATUS ="QueueAssigned";
+	public static final String LOADDISTRIBUTION_FAILURE_STATUS ="Failed";
+	public static final String LOADDISTRIBUTION_FALIURE_SUBSTATUS ="Invalid Input paramters";
+	public static final String LOADDISTRIBUTION_FALIURE1_SUBSTATUS ="InvalidProcessingCategory";
+	public static final String LOADDISTRIBUTION_FALIURE2_SUBSTATUS ="No_Recordswith_preference1";
+	public static final String LOADDISTRIBUTION_RETRY_SUBSTATUS ="TechError";
+	public static final String LOADDISTRIBUTION_RETRY_STATUS ="Retry";
+	public static final String LOADDISTRIBUTION_REMARK ="loadbalancer";
+
 	// predefined Strings
-	
 	public static final int SUCCESS_CODE=200;
 	public static final String INPUT_DATA_ERROR_CODE="401";
 	public static final int EXCEPTION_CODE=500;
@@ -61,23 +95,6 @@ public class Constants {
 	public static final String ERR_CODE="ErrCode";
 	public static final String ERR_MSG="ErrMsg";
 	public static final String INTENTS_KEY = "intents";
-		
-	//Netcore Pepipost events
-	public static final String NETCORE_PEPIPOST_STATUS_SENT = "sent";
-	public static final String NETCORE_PEPIPOST_STATUS_OPENED = "opened";
-	public static final String NETCORE_PEPIPOST_STATUS_CLICKED = "clicked";
-	public static final String NETCORE_PEPIPOST_STATUS_BOUNCED = "bounced";
-	public static final String NETCORE_PEPIPOST_STATUS_DROPPED = "dropped";
-	public static final String NETCORE_PEPIPOST_STATUS_INVALID = "invalid";
-	public static final String NETCORE_PEPIPOST_STATUS_UNSUBSCRIBED = "unsubscribed";
-	public static final String NETCORE_PEPIPOST_STATUS_SPAM = "spam";
-		
-	//Vendors
-	public static final String IBANK_SMTP = "ibanksmtp";
-	public static final String NETCORE_PEPIPOST = "netcore_pepipost";
-	
-
-
 	
 	public static String getDate(String pattern) {
 		DateFormat dateFormat = new SimpleDateFormat(pattern);
