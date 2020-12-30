@@ -1,6 +1,7 @@
 package com.ipru.tcs.cloud.ecamp.Constants;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ public class S3BucketUtility {
 	
 	@Autowired
 	StorageService strgSrv;
-	
-	// To get data from S3 bucket
+
+		// To get data from S3 bucket
 		public ResponseEntity<byte[]> getTemplateFromS3(String key, String bucket) throws UtilsException {
 			StoredObjectInfo objInfo = new StoredObjectInfo();
 			objInfo.setKey(key);
@@ -57,9 +58,17 @@ public class S3BucketUtility {
 				obj.getObjStream().close();
 			} 
 			catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return result;
+		}
+		
+		//S3ObjectInputStream return
+		public InputStream getFileInputStreamFromS3(String key, String bucket) {
+			StoredObjectInfo objInfo = new StoredObjectInfo();
+			objInfo.setKey(key);
+			objInfo.setLocation(bucket);
+			StoredObject obj = strgSrv.retrieve(objInfo);
+			return obj.getObjStream();
 		}
 }

@@ -15,15 +15,25 @@ public class UpdateDBUtility {
 	
 	static final String DATE_PATTERN = "yyyy-MM-dd";
 	
-	public CampaignRecordStatusEntity updateCampaignRecordStatusToRetryTechError(Long campaignRecordId, String serviceName) throws UtilsException {
+	public CampaignRecordStatusEntity updateCampaignRecordStatusToRetry(Long campaignRecordId, String serviceName, String remark, int substatus) throws UtilsException {
+		
 		CampaignRecordStatusEntity[] campaignRecordStatusEntityArray = 
 				genericDao.findByField(Constants.CAMPAIGN_RECORD_ENTITY, "recordid", 
 							Long.toString(campaignRecordId), CampaignRecordStatusEntity.class);
 		
 		CampaignRecordStatusEntity campaignRecordStatusEntity = campaignRecordStatusEntityArray[0];
 		campaignRecordStatusEntity.setStatus(Constants.RETRY);
-		campaignRecordStatusEntity.setSubstatus(0);  	// Not sure till now
-		campaignRecordStatusEntity.setRemarks("Technical Error");
+		  	// Not sure till now
+		if(remark != null) {
+			campaignRecordStatusEntity.setRemarks(remark);
+			campaignRecordStatusEntity.setSubstatus(substatus);
+		}
+		else {
+			campaignRecordStatusEntity.setRemarks("Technical Error");
+			campaignRecordStatusEntity.setSubstatus(0);
+		}
+		campaignRecordStatusEntity.setUpdateddate(Constants.getDate("yyyy-MM-dd"));
+		campaignRecordStatusEntity.setUpdatedby(serviceName);
 		
 		// GenericDao call to update DB
 		CampaignRecordStatusEntity campaignRecordStatusEntityResponse = 

@@ -6,22 +6,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Constants {
-	
-//	000 - New
-//	100 - Transit
-//	200 - sent
-//	300 - delivered
-//  400 - Evaluated
-//	500 - Processing
-//	700 - Failed
-//	800 - Retry
-//	900 - Not to Send   
-//	101 - Evaluated
-//	102 - Enqueuing
-//	112 - Enqueue Failed	
-	
 	//Statuses and Substatuses
-	public static final int TRANSIT = 100;
+	public static final int NEW = 000;
+	public static final int TRANSIT = 500;
 	public static final int SENT = 200;
 	public static final int DELIVERED = 300;
 	public static final int RETRY = 800;
@@ -49,9 +36,13 @@ public class Constants {
 	public static final String NETCORE_PEPIPOST_STATUS_INVALID = "invalid";
 	public static final String NETCORE_PEPIPOST_STATUS_UNSUBSCRIBED = "unsubscribed";
 	public static final String NETCORE_PEPIPOST_STATUS_SPAM = "spam";
+	
+	//IBank SMTP events
+	public static final String IBANK_SMTP_STATUS_READ = "read";
+	public static final String IBANK_SMTP_STATUS_NAVIGATE = "navigate";
 		
 	//Vendors
-	public static final String IBANK_SMTP = "ibanksmtp";
+	public static final String IBANK_SMTP = "ibank_smtp";
 	public static final String NETCORE_PEPIPOST = "netcore_pepipost";
 	
 	//Entities
@@ -61,11 +52,10 @@ public class Constants {
 	
 	//Services
 	public static final String EMAIL_SERVICE = "emailservice";
+	public static final String IBANK_STATUS_SERVICE = "ibankstatusservice";
+	public static final String NETCORE_PEPIPOST_STATUS_SERVICE = "netcorepepipoststatusservice";
 
 	//LoadDistibutionService Statuses
-	public static final String SUCCESS_CODE="200";
-	public static final String INPUT_DATA_ERROR_CODE="401";
-	public static final String EXCEPTION_CODE="500";
 	public static final String LOADDISTRIBUTION_SUCCESS_STATUS ="Processing";
 	public static final String LOADDISTRIBUTION_SUCCESS_SUBSTATUS ="QueueAssigned";
 	public static final String LOADDISTRIBUTION_FAILURE_STATUS ="Failed";
@@ -76,6 +66,7 @@ public class Constants {
 	public static final String LOADDISTRIBUTION_RETRY_STATUS ="Retry";
 	public static final String LOADDISTRIBUTION_REMARK ="loadbalancer";
 	
+	// Get Current Date
 	public static String getDate(String pattern) {
 		DateFormat dateFormat = new SimpleDateFormat(pattern);
 		Calendar cal = Calendar.getInstance();
@@ -83,6 +74,7 @@ public class Constants {
 		String currentDate=dateFormat.format(date);
 		return currentDate;
 	}
+	// Get Current Time
 	public static String getTime(String pattern) {
 		DateFormat timeFormat = new SimpleDateFormat(pattern);
 		Calendar cal = Calendar.getInstance();
