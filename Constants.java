@@ -49,6 +49,8 @@ public class Constants {
 	public static final String CAMPAIGN_RECORD_ENTITY = "campaignrecord";
 	public static final String CAMPAIGN_DEFINITION_ENTITY = "campaigndefinition";
 	public static final String CAMPAIGN_TEMPLATE_ENTITY = "campaigntemplate";
+	public static final String RETRY__ENTITY = "retry";
+	public static final String RETRYSCHEDULERSERVICE = "RetrySchedulerService";
 	
 	//Services
 	public static final String EMAIL_SERVICE = "emailservice";
@@ -65,6 +67,11 @@ public class Constants {
 	public static final String LOADDISTRIBUTION_RETRY_SUBSTATUS ="TechError";
 	public static final String LOADDISTRIBUTION_RETRY_STATUS ="Retry";
 	public static final String LOADDISTRIBUTION_REMARK ="loadbalancer";
+	public static final String CONFIGURATIONTAG ="TAG";
+	public static final String VERY_HIGH_VOLUME ="VERYHIGHVOLUME";
+	public static final String HIGH_VOLUME ="HIGHVOLUME";
+	public static final String MODARATE_VOLUME ="MODARATEVOLUME";
+	public static final String LOW_VOLUME ="LOWVOLUME";
 	
 	// Get Current Date
 	public static String getDate(String pattern) {
